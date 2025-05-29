@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JSON and jQuery Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+  <script>
+    $(document).ready(function () {
+      $.getJSON("books.json", function (data) {
+        console.log("Title of the first book:", data[0].title);
+        console.log("Author of the second book:", data[1].author);
+        console.log("Genres of all books:");
+        data.forEach(book => {
+          console.log(book.genres.join(", "));
+        });
+      });
+    });
+  </script>
+</body>
+</html>
